@@ -9,6 +9,7 @@ def scalar_multiply(matrix: list[list[int | float]], scalar: int | float) -> lis
 
     return result
 
+
 # using list comprehension
 # def scalar_multiply_1(matrix: list[list[int|float]], scalar: int|float) -> list[list[int|float]]:
 #     return [[element * scalar for element in row] for row in matrix]
