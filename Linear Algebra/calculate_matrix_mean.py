@@ -14,5 +14,14 @@ def calculate_matrix_mean(matrix: list[list[float]], mode: str) -> list[float]:
     return means
 
 
+def calculate_matrix_mean_1(matrix: list[list[float]], mode: str) -> list[float]:
+    if mode == 'column':
+        return [sum(col) / len(matrix) for col in zip(*matrix)]
+    elif mode == 'row':
+        return [sum(row) / len(row) for row in matrix]
+    else:
+        raise ValueError("Invalid mode. Choose 'row' or 'column'.")
+
+
 print(calculate_matrix_mean(matrix=[[1, 2, 3], [4, 5, 6], [7, 8, 9]], mode='column'))  # [4.0, 5.0, 6.0]
-print(calculate_matrix_mean(matrix=[[1, 2, 3], [4, 5, 6], [7, 8, 9]], mode='row'))  # [2.0, 5.0, 8.0]
+print(calculate_matrix_mean_1(matrix=[[1, 2, 3], [4, 5, 6], [7, 8, 9]], mode='row'))  # [2.0, 5.0, 8.0]
